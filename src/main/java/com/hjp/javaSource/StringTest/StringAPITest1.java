@@ -1,11 +1,11 @@
 package com.hjp.javaSource.StringTest;
 
 /**
- * @author huangjup
- * @create in 2017-09-05 11:11
- * @since JDK1.0
- */
-public class StringCompareTest {
+ * String API 测试程序
+ * @author huangjp
+ * 2017-9-6 9:20
+ **/
+public class StringAPITest1 {
 
     private final static String str1 = "hello String";     //length : 12
     private final static String str2 = "another String";   //length : 14
@@ -18,6 +18,7 @@ public class StringCompareTest {
     private final static CharSequence cs1 = "a";
     private final static CharSequence cs2 = "A";
 
+    private final static int beginIndex = 1;
     private final static int length = str1.length();
 
     public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class StringCompareTest {
 
         testCodePointBefore(str1, length - 1);                   //output : hello String codePointBefore 11 is [110]
 
-        testCodePointCount(str1, 1, length - 2);    //output : hello String, beginIndex:1, endIndex:10, codePointCount:9
+        testCodePointCount(str1, beginIndex, length - 2);     //output : hello String, beginIndex:1, endIndex:10, codePointCount:9
 
         testCompareTo(str1, str2);      //output : 'hello String' compareTo 'another String' is [7]
         testCompareTo(str1, str1);      //output : 'hello String' compareTo 'hello String' is [0]
@@ -124,5 +125,4 @@ public class StringCompareTest {
     private static void testCharAt(String s, int index){
         System.out.println(s + " charAt " + index + " is [" + s.charAt(index) + "]");
     }
-
 }
