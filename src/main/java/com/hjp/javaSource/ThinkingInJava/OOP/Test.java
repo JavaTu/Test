@@ -19,7 +19,25 @@ public class Test {
 //          testOperator();
 //testRandom();
 //        testEquals();
-        testToBinaryString();
+//        testToBinaryString();
+        E04_FindPrime();
+    }
+
+    private static void E04_FindPrime(){
+        System.out.println("----------------------- E04_FindPrime ------------------------");
+        for (int i = 1; i <= 100; i++) {
+            boolean flag = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.println("找到素数 : " + i);
+            }
+        }
+        System.out.println("");
     }
 
     /**
@@ -204,9 +222,13 @@ public class Test {
 
 class StaticTest{
     static int i = 47;
+
+    public static void main(String[] args) {
+        System.out.println("Second main function in one file");
+    }
 }
 
-class Integral {
+class Integral{
     float aFloat;
 }
 
@@ -215,6 +237,90 @@ class Dog {
 
      String says;
 }
+
+class A{
+
+    A(String name) {
+        System.out.println("A.name = " + name);
+    }
+}
+
+class B extends A{
+
+    B(String name) {
+        super(name);    //调用基类构造器必须是你在导出类构造器中要做的第一件事
+        System.out.println("B.name = " + name);
+    }
+
+    B(){
+        super("no parameters");
+        System.out.println("B()");
+    }
+
+    public static void main(String[] args) {
+        B b = new B();
+        B b1 = new B("one parameters");
+    }
+    /*
+       output : A.name = no parameters
+                B()
+                A.name = one parameters
+                B.name = one parameters
+     */
+}
+
+class Component1{
+    Component1() {
+        System.out.println("Component1()");
+    }
+}
+
+class Component2{
+    Component2() {
+        System.out.println("Component2()");
+    }
+}
+
+class Component3{
+    Component3() {
+        System.out.println("Component3()");
+    }
+}
+
+class Root{
+    Component1 component1 = new Component1();
+    Component2 component2 = new Component2();
+    Component3 component3 = new Component3();
+
+    Root() {
+        System.out.println("root()");
+    }
+}
+
+class Stem extends Root{
+    Component1 component1 = new Component1();
+    Component2 component2 = new Component2();
+    Component3 component3 = new Component3();
+
+    Stem() {
+        System.out.println("stem()");
+    }
+
+    public static void main(String[] args) {
+        new Stem();
+    }
+}
+
+/*
+ *  output : Component1()
+             Component2()
+             Component3()
+             root()         为什么root的component也会初始化呢？在定义对象的地方初始化引用，这意味着它们总是能够在构造器被调用之前被初始化。
+             Component1()
+             Component2()
+             Component3()
+             stem()
+ */
 
 
 
