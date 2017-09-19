@@ -20,7 +20,7 @@ public class Test {
 //testRandom();
 //        testEquals();
 //        testToBinaryString();
-        E04_FindPrime();
+//        E04_FindPrime();
     }
 
     private static void E04_FindPrime(){
