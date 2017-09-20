@@ -1,16 +1,17 @@
 package com.hjp.javaSource.ThinkingInJava.ReusingClass;
 
+import com.hjp.javaSource.ThinkingInJava.OOP.Test;
+
 /**
  * @author huangjp 2017-9-19 17:07
+ * 测试protected的权限
  **/
 public class AnotherClass {
 
     public static void main(String[] args) {
-        Test test = new Test();
-        System.out.println("一个包内的文件，无论是否继承父类，都能访问protected方法");
-        System.out.println("一个包内访问protected方法");
+        E15_Protected test = new E15_Protected();
         System.out.println("无法访问private方法");
-        test.protectedMethod();
+        test.f();   //一个包内的文件，无论是否继承父类，都能访问protected方法
     }
 
 }
@@ -18,9 +19,8 @@ public class AnotherClass {
 class ExtendsClass extends Test{
 
     public static void main(String[] args) {
-        Test test = new Test();
-        test.protectedMethod();
-        System.out.println("即时继承了父类，也无法访问父类的private方法");
+        E15_Protected test = new E15_Protected();
+        test.f();   //即时继承了父类，也无法访问父类的private方法
     }
 
 }

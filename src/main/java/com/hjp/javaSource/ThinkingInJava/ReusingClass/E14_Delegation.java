@@ -1,21 +1,54 @@
 package com.hjp.javaSource.ThinkingInJava.ReusingClass;
 
 /**
- * @author huangjp 2017-9-19 14:29
- * 复用类
+ * @author huangjp 2017-9-20 9:30
+ * 测试代理
  **/
-public class Test {
+public class E14_Delegation {
 
-    protected void protectedMethod(){
-        System.out.println("protectedMethod");
+    public static void main(String[] args) {
+        Customer customer = new Customer(1);
+        try {
+            System.out.println("");
+            System.out.println("Test finally");
+            System.out.println("");
+        }finally {
+            customer.dispose(1);
+        }
     }
 
-    private void privateMethod(){
-        System.out.println("privateMethod");
-    }
+    /*
+     *  output : Shape construct
+                Shape construct
+                Circle construct
+                Shape construct
+                Line construct: 0, 0
+                Shape construct
+                Circle construct
+                Shape construct
+                Line construct: 1, 1
+                Shape construct
+                Circle construct
+                Shape construct
+                Line construct: 2, 4
+                Customer construct
+
+                Test finally
+
+                Shape dispose
+                Shape dispose
+                Circle dispose
+                Shape dispose
+                Line dispose
+                Shape dispose
+                Line dispose
+                Shape dispose
+                Line dispose
+     */
 }
 
 class SpaceShipControls{
+
     void up(int velocity){
         System.out.println("控制器起飞");
     }
@@ -104,7 +137,7 @@ class Customer extends Shape{
     private Circle circle;
     private Line[] lines = new Line[3];
 
-    private Customer(int i) {
+    public Customer(int i) {
         super(i);
         for (int j = 0 ; j < 3; j++) {
             circle = new Circle(1);
@@ -120,44 +153,4 @@ class Customer extends Shape{
             lines[j].dispose(j, j*j);
         }
     }
-
-    public static void main(String[] args) {
-        Customer customer = new Customer(1);
-        try {
-            System.out.println("");
-            System.out.println("Test finally");
-            System.out.println("");
-        }finally {
-            customer.dispose(1);
-        }
-    }
-
-    /*
-     *  output : Shape construct
-                Shape construct
-                Circle construct
-                Shape construct
-                Line construct: 0, 0
-                Shape construct
-                Circle construct
-                Shape construct
-                Line construct: 1, 1
-                Shape construct
-                Circle construct
-                Shape construct
-                Line construct: 2, 4
-                Customer construct
-
-                Test finally
-
-                Shape dispose
-                Shape dispose
-                Circle dispose
-                Shape dispose
-                Line dispose
-                Shape dispose
-                Line dispose
-                Shape dispose
-                Line dispose
-     */
 }
