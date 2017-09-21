@@ -1,4 +1,4 @@
-package com.hjp.javaSource.ThinkingInJava.ResuingClass2;
+package com.hjp.javaSource.ThinkingInJava;
 
 /**
  * @author huangjp 2017-9-19 17:10
