@@ -25,10 +25,6 @@ public class E19_InnerInsideInner {
     SimpleInterface getI(){
         return new SimpleInterface() {
 
-            {
-                System.out.println("实体化？？？构造函数？？？");
-            }
-
             @Override
             public void f() {
                 System.out.println("匿名内部类.f()...");
@@ -40,14 +36,10 @@ public class E19_InnerInsideInner {
         InnerClass1 i1 = new InnerClass1();
         InnerClass1.InnerClass2 i2 = i1.get2();
         i2.f();
-
-        E19_InnerInsideInner iii = new E19_InnerInsideInner();
-        iii.getI();
     }
     /*
         Output :
                 InnerClass2.f()...
-                实体化？？？构造函数？？？
      */
 }
 
@@ -56,13 +48,9 @@ class OtherClass{
         E19_InnerInsideInner.InnerClass1 i1 = new E19_InnerInsideInner.InnerClass1();
         E19_InnerInsideInner.InnerClass1.InnerClass2 i2 = i1.get2();
         i2.f();
-
-        E19_InnerInsideInner iii = new E19_InnerInsideInner();
-        iii.getI();
     }
     /*
         Output :
                 InnerClass2.f()...
-                实体化？？？构造函数？？
      */
 }
