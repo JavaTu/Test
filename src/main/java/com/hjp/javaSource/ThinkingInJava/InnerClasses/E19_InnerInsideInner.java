@@ -6,6 +6,7 @@ package com.hjp.javaSource.ThinkingInJava.InnerClasses;
  * E19_InnerInsideInner：    E19_InnerInsideInner.class
  * InnerClass1：             E19_InnerInsideInner$InnerClass1.class
  * InnerClass2：             E19_InnerInsideInner$InnerClass1$InnerClass2.class
+ * 匿名内部类：                E19_InnerInsideInner$1.class
  **/
 public class E19_InnerInsideInner {
 
@@ -21,13 +22,32 @@ public class E19_InnerInsideInner {
         }
     }
 
+    SimpleInterface getI(){
+        return new SimpleInterface() {
+
+            {
+                System.out.println("实体化？？？构造函数？？？");
+            }
+
+            @Override
+            public void f() {
+                System.out.println("匿名内部类.f()...");
+            }
+        };
+    }
+
     public static void main(String[] args) {
         InnerClass1 i1 = new InnerClass1();
         InnerClass1.InnerClass2 i2 = i1.get2();
         i2.f();
+
+        E19_InnerInsideInner iii = new E19_InnerInsideInner();
+        iii.getI();
     }
     /*
-        Output : InnerClass2.f()...
+        Output :
+                InnerClass2.f()...
+                实体化？？？构造函数？？？
      */
 }
 
@@ -36,8 +56,13 @@ class OtherClass{
         E19_InnerInsideInner.InnerClass1 i1 = new E19_InnerInsideInner.InnerClass1();
         E19_InnerInsideInner.InnerClass1.InnerClass2 i2 = i1.get2();
         i2.f();
+
+        E19_InnerInsideInner iii = new E19_InnerInsideInner();
+        iii.getI();
     }
     /*
-        Output : InnerClass2.f()...
+        Output :
+                InnerClass2.f()...
+                实体化？？？构造函数？？
      */
 }
