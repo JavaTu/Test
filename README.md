@@ -1,2 +1,2 @@
 # JavaSource
-阅读Java源代码过程中总结的API
+阅读《Java编程思想》中总结的API
