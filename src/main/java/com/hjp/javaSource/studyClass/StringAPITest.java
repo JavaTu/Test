@@ -1,4 +1,4 @@
-package com.hjp.javaSource.StringTest;
+package com.hjp.javaSource.studyClass;
 
 import java.io.UnsupportedEncodingException;
 

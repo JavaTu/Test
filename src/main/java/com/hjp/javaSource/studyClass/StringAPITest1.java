@@ -1,4 +1,4 @@
-package com.hjp.javaSource.StringTest;
+package com.hjp.javaSource.studyClass;
 
 /**
  * String API 测试程序

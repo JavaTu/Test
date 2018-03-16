@@ -1,4 +1,4 @@
-package com.hjp.javaSource.Test;
+package com.hjp.javaSource.test;
 
 import java.util.Scanner;
 

@@ -11,20 +11,20 @@ public class E17_FinalTest {
 
     public static void main(String[] args) {
 
-        System.out.println("----------------------- Test Begin --------------------------");
+        System.out.println("----------------------- test Begin --------------------------");
         FinalObjectClass object1 = new FinalObjectClass();
-        System.out.println("----------------------- Test End --------------------------\n");
+        System.out.println("----------------------- test End --------------------------\n");
 
         object1.f1.f3 = 1111;
         // !f1 = new FinalClass();          //证明了final对象可修改其数据，但不可修改其引用
 
-        System.out.println("----------------------- Test Begin --------------------------");
+        System.out.println("----------------------- test Begin --------------------------");
         FinalObjectClass object2 = new FinalObjectClass();
-        System.out.println("----------------------- Test End --------------------------\n");
+        System.out.println("----------------------- test End --------------------------\n");
     }
     /*
         Output :
-            ----------------------- Test Begin --------------------------
+            ----------------------- test Begin --------------------------
             获取一个static final数据sf1
             获取一个final数据f1
             获取一个普通的数据
@@ -39,9 +39,9 @@ public class E17_FinalTest {
             加载FinalObjectClass的构造函数
             FinalObjectClass{f1=FinalMemberClass{f1=1, f3=1, sf1=8}, f2=FinalMemberClass{f1=5, f3=3, sf1=8}}    //FinalObjectClass object1 = new FinalObjectClass();引起
 
-            ----------------------- Test End --------------------------
+            ----------------------- test End --------------------------
 
-            ----------------------- Test Begin --------------------------
+            ----------------------- test Begin --------------------------
             获取一个final数据f1
             获取一个普通的数据
             加载FinalMemberClass的构造函数
@@ -53,7 +53,7 @@ public class E17_FinalTest {
             加载FinalObjectClass的构造函数
             FinalObjectClass{f1=FinalMemberClass{f1=9, f3=8, sf1=8}, f2=FinalMemberClass{f1=5, f3=3, sf1=8}}
 
-            ----------------------- Test End --------------------------
+            ----------------------- test End --------------------------
      */
 }
 

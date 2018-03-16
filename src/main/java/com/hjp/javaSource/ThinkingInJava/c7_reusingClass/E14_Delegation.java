@@ -10,7 +10,7 @@ public class E14_Delegation {
         Customer customer = new Customer(1);
         try {
             System.out.println("");
-            System.out.println("Test finally");
+            System.out.println("test finally");
             System.out.println("");
         }finally {
             customer.dispose(1);
@@ -33,7 +33,7 @@ public class E14_Delegation {
                 Line construct: 2, 4
                 Customer construct
 
-                Test finally
+                test finally
 
                 Shape dispose
                 Shape dispose

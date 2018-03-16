@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author huangjp 2018-03-14 19:41
  * 16.7.2示例：数组的比较（对象数组）
  **/
-public class T72_ComparingArrays {
+public class T3_ComparingArrays {
 
     public static void main(String[] args) {
         PublicEntity entity1 = new PublicEntity();
