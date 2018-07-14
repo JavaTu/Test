@@ -1,6 +1,8 @@
 package com.hjp.javaSource.ThinkingInJava.c14_typeInformation;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.regex.Pattern;
 
@@ -23,9 +25,49 @@ public class T7_ShowMethods {
         }
 
         try {
-            Class<?> c = Class.forName(args[0]);
+            //得到Class对象的三种方式：
+            //方式一：Class的静态方法：forName
+            Class c = Class.forName(args[0]);
+
+            //方式二：通过静态属性：class
+            //Class c = String.class;
+
+            //方式三：通过Object的getClass()方法
+            //Class c = new String().getClass();
             Method[] methods = c.getMethods();
-            Constructor<?>[] ctors = c.getConstructors();
+            Constructor[] ctors = c.getConstructors();
+
+            try {
+                //获取指定构造函数（参数为数组）
+                Constructor ctor = c.getDeclaredConstructor(byte[].class, int.class, int.class);
+                byte[] bytes = {'a','b','c', 'd', 'e'};
+                Object o1 = ctor.newInstance(bytes, 1, 3);
+                System.out.println("o1 = "+o1);                         //o1 = bcd
+
+                Field f = c.getDeclaredField("hash");
+                System.out.println("o1.hash = "+f);                     //o1.hash = private int java.lang.String.hash
+
+                Method m = c.getDeclaredMethod("toString");
+                System.out.println("o1.toString = "+m.invoke(o1));      //o1.toString = bcd
+
+                Method m1 = c.getDeclaredMethod("indexOfSupplementary", int.class, int.class);
+                m1.setAccessible(true);
+                System.out.println("o1.indexOfSupplementary = " + m1.invoke(o1,  1, 1));    //o1.indexOfSupplementary = -1
+                System.out.println("###################");
+
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e1){
+                e1.printStackTrace();
+            }
+
+
             if (args.length == 1){
                 for (Method method : methods)
                     System.out.println(p.matcher(method.toString()).replaceAll(""));

@@ -25,4 +25,27 @@ public class PublicEntity {
     public void setAttribute2(String attribute2) {
         this.attribute2 = attribute2;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        System.out.println("开始执行PublicEntity的equals方法");
+
+        if (obj == this){
+            return true;
+        }
+
+        if (obj instanceof PublicEntity){
+            PublicEntity entity = (PublicEntity) obj;
+            String attribute1 = entity.attribute1;
+            if (attribute1 == this.attribute1){
+                return true;
+            }
+            if (attribute1 != null && attribute1.equals(this.attribute1)){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
