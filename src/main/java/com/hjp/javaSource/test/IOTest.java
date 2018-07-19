@@ -59,6 +59,7 @@ public class IOTest {
             FileInputStream stream = new FileInputStream(file);
             byte[] bytes = new byte[1024];
             if (stream.read(bytes) > 0){
+                //stream.close();   FileInputStream实现了Closeable接口，而JDK7后，Closeable继承了AutoCloseable接口，所以，这种try语句可以自动关闭资源。
                 return new String(bytes);
             }
         } catch (FileNotFoundException e) {

@@ -1,4 +1,4 @@
-package com.hjp.javaSource.ThinkingInJava.c18_IO;
+package com.hjp.javaSource.ThinkingInJava.c18_io;
 
 import java.io.File;
 import java.io.FilenameFilter;

@@ -1,4 +1,4 @@
-package com.hjp.javaSource.ThinkingInJava.c18_IO;
+package com.hjp.javaSource.ThinkingInJava.c18_io;
 
 import org.springframework.util.StringUtils;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @author huangjp 2018/7/16 12:08
  * 查找所有在doc目录子树下的txt文件：使用递归的方式实现。（参考E06_filterFiles自己输出一遍。）
  **/
-public class E06_filterFiles2 {
+public class E06_FilterFiles2 {
 
     public static void main(String[] args) {
         //String startPath = "doc/child1/child2";
@@ -44,34 +44,6 @@ public class E06_filterFiles2 {
 
         @Override
         public String toString() {
-            /*String result = "files = [";
-            if (files.isEmpty()){
-                result += "], \ndirs = [";
-            }else {
-                for (int i = 0; i < files.size(); i++){
-                    File item = files.get(i);
-                    if (i == files.size() - 1){
-                        result += (item.getName() + "], \ndirs = [");
-                    }else {
-                        result += (item.getName() + ", ");
-                    }
-                }
-            }
-
-            if (dirs.isEmpty()){
-                result += "]";
-            }else {
-                for (int i = 0; i < dirs.size(); i++){
-                    File item = dirs.get(i);
-                    if (i == dirs.size() - 1){
-                        result += (item.getName() + "]");
-                    }else {
-                        result += (item.getName() + ", ");
-                    }
-                }
-            }
-            return result;*/
-
             return "files : " + cToString(files) + "\n\ndirs :" + cToString(dirs);
         }
     }

@@ -1,4 +1,4 @@
-package com.hjp.javaSource.ThinkingInJava.c18_IO;
+package com.hjp.javaSource.ThinkingInJava.c18_io;
 
 import com.hjp.javaSource.ThinkingInJava.util.PPrint;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @author huangjp 2018/7/15 0015 16:20
  * 查找所有在doc目录子树下的txt文件：使用递归的方式实现。
  **/
-public class E06_filterFiles {
+public class E06_FilterFiles {
 
     public static void main(String[] args) {
 
