@@ -11,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author huangjp 2018/7/24 20:03
  * 线程之间的协作（合作）：给卡车涂蜡-抛光-涂蜡
+ * 参考资料：https://www.cnblogs.com/takumicx/p/9338983.html
  **/
 public class T05_Collaboration {
 
