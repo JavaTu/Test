@@ -7,6 +7,7 @@ import java.lang.reflect.Proxy;
 /**
  * @author huangjp 2018-03-21 15:33
  * 14.6动态代理：由T8_SimpleProxyDemo升级来的动态代理，可以动态的创建代理并动态的处理对所代理方法的调用
+ * 参考：https://www.jianshu.com/p/95970b089360
  **/
 public class T9_SimpleDynamicProxy{
 
@@ -15,8 +16,9 @@ public class T9_SimpleDynamicProxy{
     }
 
     public static void main(String[] args) {
-        Interface proxy = (Interface)Proxy.newProxyInstance(Interface.class.getClassLoader(), new Class[]{Interface.class},
-                new DynamicProxyHandler(new RealObject()));
+        RealObject object = new RealObject();
+        Interface proxy = (Interface)Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(),
+                new DynamicProxyHandler(object));
         consumer(proxy);
     }
 }
