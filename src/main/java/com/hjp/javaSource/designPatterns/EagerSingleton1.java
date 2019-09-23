@@ -1,4 +1,4 @@
-package com.hjp.javaSource.DesignPatterns;
+package com.hjp.javaSource.designPatterns;
 
 /**
  * @author huangjp 2018/7/25 13:10

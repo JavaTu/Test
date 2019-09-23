@@ -1,7 +1,5 @@
 package com.hjp.javaSource.test;
 
-import com.sun.xml.internal.txw2.output.DataWriter;
-
 import java.io.*;
 
 /**
