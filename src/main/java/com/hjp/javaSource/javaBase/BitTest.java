@@ -3,6 +3,7 @@ package com.hjp.javaSource.javaBase;
 /**
  * @ClassName: BitTest
  * @Description: 位运算测试类
+ * 参考：https://oi-wiki.org/math/bit/
  * @Author: huangjp
  * @Date: 2020/5/29 11:52
  */
@@ -34,6 +35,17 @@ public class BitTest {
 
         System.out.println("-2的二进制：" + Integer.toBinaryString(d));
         System.out.println("-1 >>> 2 ：" + Integer.toBinaryString(d >>> 2));
+
+        // HashMap的Hash计算
+        String key = "test";
+        int hashCode = key.hashCode();
+        int hash = hashCode ^ (hashCode >>> 16);
+        System.out.println("hashCode " + hashCode + " 的hash值：" + hash);
+
+        // HashMap数组下标的计算
+        int length = 16;
+        int index = (length - 1) & hash;
+        System.out.println("index：" + index);
     }
 
 }
