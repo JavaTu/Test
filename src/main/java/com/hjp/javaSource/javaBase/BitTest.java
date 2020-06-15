@@ -34,7 +34,8 @@ public class BitTest {
         System.out.println("1001 >>> 2：" + Integer.toBinaryString(c >>> 2));    // 10
 
         System.out.println("-2的二进制：" + Integer.toBinaryString(d));
-        System.out.println("-1 >>> 2 ：" + Integer.toBinaryString(d >>> 2));
+        System.out.println("-2 >> 2 ：" + Integer.toBinaryString(d >> 2));       // 填充1
+        System.out.println("-2 >>> 2 ：" + Integer.toBinaryString(d >>> 2));     // 无符号：填充0
 
         // HashMap的Hash计算
         String key = "test";
