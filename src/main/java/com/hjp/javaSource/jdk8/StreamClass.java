@@ -15,9 +15,9 @@ public class StreamClass {
     public static void main(String[] args) {
         List<Integer> list = Arrays.asList(1,4,3,2,5);
 
-        /**
-         * 主要方法：
-         */
+        // foreach
+        list.stream().forEach(each -> System.out.println(each));
+
         // 过滤
         list = list.stream().filter(Integer -> Integer > 1).collect(Collectors.toList());
         System.out.println(list);
@@ -35,7 +35,6 @@ public class StreamClass {
         System.out.println(list);
 
         // ....
-
 
     }
 

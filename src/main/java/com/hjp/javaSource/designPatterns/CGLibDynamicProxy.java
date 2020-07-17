@@ -10,4 +10,5 @@ package com.hjp.javaSource.designPatterns;
 public class CGLibDynamicProxy {
 
 
+
 }

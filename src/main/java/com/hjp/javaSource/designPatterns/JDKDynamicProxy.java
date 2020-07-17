@@ -12,9 +12,8 @@ public class JDKDynamicProxy{
 
     public static void main(String[] args) {
         System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
-        RealObject object = new RealObject();
-        Interface proxy = (Interface)Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(),
-                new DynamicProxyHandler(object));
+        Interface proxy = (Interface)Proxy.newProxyInstance(RealObject.class.getClassLoader(), RealObject.class.getInterfaces(),
+                new DynamicProxyHandler(new RealObject()));
         proxy.f();
     }
 }
