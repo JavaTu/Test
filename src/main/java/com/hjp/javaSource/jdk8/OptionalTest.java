@@ -1,5 +1,7 @@
 package com.hjp.javaSource.jdk8;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -9,14 +11,19 @@ import java.util.Optional;
 public class OptionalTest {
 
     public static void main(String[] args) throws Exception {
-        User user = null;
-        //System.out.println(user.getName());     //肯定报错了：java.lang.NullPointerException
-
-        //Optional.ofNullable(user).orElseThrow(() -> new Exception("用户不存在"));    // 更优雅
-        User opUser = Optional.ofNullable(user).orElse(genUser());    // 更优雅
-        //Optional.ofNullable(user).orElseGet(() -> genUser());    // 更优雅
-
-        System.out.println(opUser.getName());
+        List<User> users = Arrays.asList(genUser(), null);
+        for (User each:users){
+            User defaultUser = new User();
+            Optional<User> optional = Optional.ofNullable(each);
+            // 如果存在该值，返回值， 否则返回 other
+            User result1 = optional.orElse(defaultUser);
+            System.out.println(result1);
+            // 如果存在该值，返回值， 否则触发 other，并返回 other 调用的结果
+            User result2 = optional.orElseGet(OptionalTest::genUser);
+            System.out.println(result2);
+            // 如果存在该值，返回包含的值，否则抛出由 Supplier 继承的异常
+            optional.orElseThrow(() -> new Exception("用户不存在"));
+        }
     }
 
     private static User genUser(){
@@ -24,12 +31,9 @@ public class OptionalTest {
         user.setName("张三");
         return user;
     }
-
-
-
 }
 
-class User{
+class User {
     private String name;
 
     public String getName() {
