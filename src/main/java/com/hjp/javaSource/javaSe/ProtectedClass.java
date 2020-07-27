@@ -1,4 +1,4 @@
-package com.hjp.javaSource.test;
+package com.hjp.javaSource.javaSe;
 
 /**
  * @author huangjp 2019/9/23 4:03 PM

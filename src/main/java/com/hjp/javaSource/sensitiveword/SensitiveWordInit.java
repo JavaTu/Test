@@ -1,4 +1,4 @@
-package com.hjp.javaSource.Sensitiveword;
+package com.hjp.javaSource.sensitiveword;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

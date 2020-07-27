@@ -1,4 +1,4 @@
-package com.hjp.javaSource.map;
+package com.hjp.javaSource.collection;
 /**
  * 推介的面向接口编程的思想
  * Collection

@@ -1,4 +1,4 @@
-package com.hjp.javaSource.test;
+package com.hjp.javaSource.JUC;
 
 /**
  * @author huangjp 2018/7/21 21:00

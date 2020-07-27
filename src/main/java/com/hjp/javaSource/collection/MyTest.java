@@ -1,4 +1,4 @@
-package com.hjp.javaSource.map;
+package com.hjp.javaSource.collection;
 
 import java.util.HashMap;
 //Java中的hashCode方法就是根据一定的规则将与对象相关的信息

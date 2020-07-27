@@ -1,4 +1,4 @@
-package com.hjp.javaSource.javaBase;
+package com.hjp.javaSource.javaSe;
 
 /**
  * @ClassName: BitTest

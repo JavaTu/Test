@@ -1,4 +1,4 @@
-package com.hjp.javaSource.map;
+package com.hjp.javaSource.collection;
 
 import java.util.ArrayList;
 import java.util.List;

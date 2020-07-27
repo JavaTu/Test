@@ -1,6 +1,6 @@
 package com.hjp.javaSource.anotherPackage;
 
-import com.hjp.javaSource.test.ProtectedClass;
+import com.hjp.javaSource.javaSe.ProtectedClass;
 
 /**
  * @author huangjp 2019/9/23 4:04 PM

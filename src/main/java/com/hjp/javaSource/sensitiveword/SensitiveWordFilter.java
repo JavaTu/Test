@@ -1,4 +1,4 @@
-package com.hjp.javaSource.Sensitiveword;
+package com.hjp.javaSource.sensitiveword;
 
 import java.util.Map;
 

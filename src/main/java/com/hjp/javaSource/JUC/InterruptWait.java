@@ -1,4 +1,4 @@
-package com.hjp.javaSource.test;
+package com.hjp.javaSource.JUC;
 
 /**
  * @author huangjp 2018/7/20 16:28
@@ -42,5 +42,5 @@ true
 java.lang.InterruptedException
 	at java.lang.Object.wait(Native Method)
 	at java.lang.Object.wait(Object.java:502)
-	at com.hjp.javaSource.test.InterruptWait.run(InterruptWait.java:15)
+	at com.hjp.javaSource.JUC.InterruptWait.run(InterruptWait.java:15)
  */
