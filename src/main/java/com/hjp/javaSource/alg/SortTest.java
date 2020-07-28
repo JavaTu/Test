@@ -8,28 +8,31 @@ package com.hjp.javaSource.alg;
  */
 public class SortTest {
 
-    private static final int[] ARR = {5, 9, 1, 8, 2};
-
     public static void main(String[] args) {
-        bubbingSort(ARR);
+        int[] arr = {9, 8, 7, 6, 5};
+        bubbleSort(arr);
     }
 
-    // 冒泡排序：两两交换
-    private static void bubbingSort(int[] arr){
+    // 冒泡排序：两两交换，时间复杂度O(n^2)
+    private static void bubbleSort(int[] arr){
         for (int i=0; i<arr.length; i++){
-            int num = arr[i];
-            if (i == arr.length - 1){
-
-            }
-            int next = arr[i+1];
-            if (num <= next){
-
-            }else {
-
+            for (int j=0; j<arr.length-1; j++){
+                int temp = arr[j];
+                if (arr[j] > arr[j+1]){
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
             }
         }
 
-        for (int j=0; j<arr.length; j++)
+        for (int j=0; j<arr.length; j++){
             System.out.println(arr[j]);
+        }
+    }
+
+    // 归并排序，时间复杂度O(nlogn)
+    private static void mergeSort(int[] arr){
+        // TODO...
+
     }
 }
