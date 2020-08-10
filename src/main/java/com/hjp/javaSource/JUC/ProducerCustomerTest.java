@@ -2,7 +2,7 @@ package com.hjp.javaSource.JUC;
 
 /**
  * @ClassName: JUC.ProducerCustomerTest
- * @Description:
+ * @Description: 生产者消费者协同
  * @Author: huangjp
  * @Date: 2020/5/11 11:33
  */
