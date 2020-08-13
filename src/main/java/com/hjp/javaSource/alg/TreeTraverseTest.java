@@ -2,7 +2,9 @@ package com.hjp.javaSource.alg;
 
 /**
  * @ClassName: TreeTraverseTest
- * @Description:
+ * @Description: 前中后序遍历
+ * 参考：https://blog.csdn.net/My_Jobs/article/details/43451187
+ * https://www.jianshu.com/p/456af5480cee
  * @Author: huangjp
  * @Date: 2020/8/13 13:37
  */
