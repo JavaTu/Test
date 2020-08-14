@@ -22,7 +22,6 @@ public class CountDownLatchTest {
         CountDownLatch latch = new CountDownLatch(5);
 
         for (int i=0; i<5; i++){
-            System.out.println(String.valueOf(i));
             pool.execute(() -> {
                 for (int j=0; j<20; j++){
                     count.incrementAndGet();
@@ -33,7 +32,7 @@ public class CountDownLatchTest {
         }
 
         pool.shutdown();
-        System.out.println(count);
-        System.out.println(result);
+        System.out.println("count:" + count);
+        System.out.println("result:" + result);
     }
 }
