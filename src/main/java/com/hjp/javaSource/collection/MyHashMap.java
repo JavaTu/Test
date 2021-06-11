@@ -2,6 +2,7 @@ package com.hjp.javaSource.collection;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class MyHashMap<K, V> implements MyMap<K, V> {
 	// 定义默认数组大小 16 defaulAddSizeFactor=useSize/defaulLenth 4/16 =0.25
 	private static int defaulLenth = 1 << 4;

@@ -8,7 +8,8 @@ package com.hjp.javaSource.designPatterns;
  */
 public class SingletonTest {
 
-    private static volatile SingletonTest INSTANCE; // volatile主要用于防止指令的重排序，static是因为genInstance是静态的，由于私有的构造方法，外部只能通过SingletonTest.genInstance();生成对象，所以方法需要加上static
+    // volatile主要用于防止指令的重排序
+    private static volatile SingletonTest INSTANCE;
 
     private SingletonTest(){
 

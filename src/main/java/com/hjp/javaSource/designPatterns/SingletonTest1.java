@@ -1,4 +1,4 @@
-package com.hjp.javaSource.singleton;
+package com.hjp.javaSource.designPatterns;
 
 /**
  * @ClassName: SingletonTest1
